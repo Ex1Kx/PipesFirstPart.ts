@@ -1,0 +1,97 @@
+<div class="container my-3">
+  <h2>Examples Pipes Angular</h2>
+  <hr />
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Code Pipes</th>
+        <th scope="col">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{nombreCurso}}</td>
+        <td>uppercase</td>
+        <td>{{nombreCurso | uppercase}}</td>
+      </tr>
+
+      <tr>
+        <td>{{nombreCurso}}</td>
+        <td>lowercase</td>
+        <td>{{nombreCurso | lowercase}}</td>
+      </tr>
+      <tr>
+        <td>{{listadoFichas}}</td>
+        <td>slice:0:2 </td>
+        <td>{{listadoFichas | slice:0:2}}</td>
+      </tr>
+      <tr>
+        <td>{{listadoFichas}}</td>
+        <td>**ngFor="let valor of listadoFichas | slice:0:3"</td>
+        <ul>
+          <li *ngFor="let valor of listadoFichas | slice:0:3"></li>
+        </ul>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number</td>
+        <td> {{PI | number}}</td>
+      </tr>
+      <tr>
+        <td>{{porcentaje}}</td>
+        <td>percent</td>
+        <td>{{ porcentaje | percent}}</td>
+      </tr>
+      <tr>
+        <td>{{porcentaje}}</td>
+        <td>percent:'2.2-2'</td>
+        <td>{{porcentaje | percent:'2.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{apoyoSostenimiento}}</td>
+        <td>currency:'COP'</td>
+        <td>{{apoyoSostenimiento | currency}}</td>
+      </tr>
+      <tr>
+        <td>{{apoyoSostenimiento}}</td>
+        <td>currency:'COP'</td>
+        <td>{{apoyoSostenimiento | currency:'COP'}}</td>
+      </tr>
+      <tr>
+        <td>{{persona}}</td>
+        <td>json</td>
+        <td>{{persona | json}}</td>
+      </tr>
+      <tr>
+        <td>{{miFecha}}</td>
+        <td>date</td>
+        <td>{{miFecha | date }}</td>
+      </tr>
+      <tr>
+        <td>{{miFecha}}</td>
+        <td>date:'medium'</td>
+        <td>
+          <pre>{{miFecha | date:'medium'}}</pre>
+        </td>
+      </tr>
+      <tr>
+        <td>{{miFecha}}</td>
+        <td>date:'EEE, d of LLL of yyyy'</td>
+        <td>
+          <pre>{{miFecha | date:'EEE, d of LLL of yyyy'}}</pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Mi Password</td>
+        <td>
+          <button class="btn btn-info" (click)="enable = !enable">
+            <p *ngIf="enable" class="mb-0">Mostrar Password</p>
+            <p *ngIf="!enable" class="mb-0">Ocultar Password</p>
+          </button>
+        </td>
+        <td>{{password | myPipe:enable }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
